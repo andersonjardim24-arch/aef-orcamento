@@ -10,43 +10,39 @@
 
 body{
   min-height:100vh;
-  background:
-    radial-gradient(circle at top left,#166534 0,#020617 32%),
-    radial-gradient(circle at bottom right,#0f766e 0,#020617 35%),
-    linear-gradient(135deg,#020617,#0f172a);
-  color:#fff;
+  background:#f4f1ea;
+  color:#151515;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:18px;
 }
 
-.container{width:100%;max-width:560px}
+.container{width:100%;max-width:600px}
 
 .card{
-  background:rgba(15,23,42,.90);
-  border:1px solid rgba(34,197,94,.28);
-  border-radius:30px;
+  background:#fff;
+  border:1px solid #ddd3c4;
+  border-radius:28px;
   padding:28px;
-  box-shadow:0 25px 90px rgba(0,0,0,.7);
+  box-shadow:0 20px 60px rgba(0,0,0,.14);
 }
 
 .logo{
-  font-size:25px;
+  font-size:26px;
   font-weight:900;
-  color:#22c55e;
-  letter-spacing:.4px;
+  color:#111;
 }
 
 .sub{
-  color:#cbd5e1;
-  margin:7px 0 22px;
+  color:#555;
+  margin:6px 0 20px;
   font-size:15px;
 }
 
 .progress{
   height:8px;
-  background:#1e293b;
+  background:#e8e1d6;
   border-radius:999px;
   overflow:hidden;
   margin-bottom:24px;
@@ -55,7 +51,7 @@ body{
 .progress-bar{
   height:100%;
   width:0%;
-  background:linear-gradient(90deg,#22c55e,#86efac);
+  background:#1f7a3f;
   transition:.3s;
 }
 
@@ -64,8 +60,8 @@ body{
 
 .badge{
   display:inline-block;
-  background:#14532d;
-  color:#bbf7d0;
+  background:#111;
+  color:#fff;
   padding:7px 13px;
   border-radius:999px;
   font-size:13px;
@@ -73,38 +69,66 @@ body{
 }
 
 h1{
-  font-size:30px;
+  font-size:29px;
   line-height:1.12;
   margin-bottom:14px;
+  color:#111;
 }
 
 p{
-  color:#cbd5e1;
+  color:#555;
   line-height:1.5;
   margin-bottom:16px;
 }
 
-.value-list{
+.authority{
   display:grid;
-  gap:9px;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
   margin:18px 0;
 }
 
-.value-item{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.09);
-  padding:12px;
+.authority div{
+  background:#f8f5ef;
+  border:1px solid #e5dccf;
   border-radius:14px;
-  color:#e2e8f0;
-  font-size:15px;
+  padding:13px;
+  font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+.partners{
+  background:#111;
+  color:#fff;
+  border-radius:18px;
+  padding:18px;
+  margin:18px 0;
+}
+
+.partners h3{font-size:17px;margin-bottom:10px;color:#fff}
+
+.partner-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+}
+
+.partner{
+  background:#262626;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  font-size:13px;
+  color:#ddd;
 }
 
 .options{display:grid;gap:11px}
 
 .option{
-  background:#020617;
-  color:#fff;
-  border:1px solid #334155;
+  background:#f8f5ef;
+  color:#111;
+  border:1px solid #ddd3c4;
   padding:16px;
   border-radius:15px;
   text-align:left;
@@ -114,15 +138,15 @@ p{
 }
 
 .option:hover,.option.selected{
-  border-color:#22c55e;
-  background:#052e16;
+  border-color:#1f7a3f;
+  background:#e7f4eb;
 }
 
 input{
   width:100%;
-  background:#020617;
-  color:#fff;
-  border:1px solid #334155;
+  background:#f8f5ef;
+  color:#111;
+  border:1px solid #ddd3c4;
   padding:16px;
   border-radius:15px;
   font-size:17px;
@@ -145,25 +169,27 @@ button{
 }
 
 .btn-next,.btn-advance{
-  background:#22c55e;
-  color:#052e16;
+  background:#1f7a3f;
+  color:#fff;
 }
 
 .btn-next{width:100%}
+
 .btn-back{
-  background:#1e293b;
+  background:#111;
   color:#fff;
 }
+
 .btn-back,.btn-advance{flex:1}
 
 .loading{text-align:center;padding:28px 0}
-.loading div{margin:13px 0;color:#bbf7d0}
+.loading div{margin:13px 0;color:#1f7a3f;font-weight:700}
 
 .spinner{
   width:52px;
   height:52px;
-  border:5px solid #1e293b;
-  border-top:5px solid #22c55e;
+  border:5px solid #e8e1d6;
+  border-top:5px solid #1f7a3f;
   border-radius:50%;
   animation:spin 1s linear infinite;
   margin:auto;
@@ -172,17 +198,17 @@ button{
 @keyframes spin{to{transform:rotate(360deg)}}
 
 .result{
-  background:linear-gradient(135deg,#052e16,#064e3b);
-  border:1px solid #22c55e;
-  padding:22px;
+  background:#111;
+  color:#fff;
   border-radius:21px;
+  padding:22px;
   margin-top:16px;
 }
 
 .price{
   font-size:39px;
   font-weight:900;
-  color:#86efac;
+  color:#d8b46a;
   margin:12px 0;
 }
 
@@ -190,21 +216,45 @@ button{
   margin-top:16px;
   padding:14px;
   border-radius:15px;
-  background:#111827;
-  border:1px dashed #22c55e;
-  color:#bbf7d0;
+  background:#e7f4eb;
+  border:1px dashed #1f7a3f;
+  color:#14532d;
   font-weight:800;
 }
 
+.coupon{
+  margin-top:16px;
+  padding:15px;
+  border-radius:15px;
+  background:#fff7df;
+  border:1px solid #d8b46a;
+  color:#5c4100;
+  font-weight:800;
+}
+
+.value-list{
+  display:grid;
+  gap:9px;
+  margin-top:18px;
+}
+
+.value-item{
+  background:#f8f5ef;
+  border:1px solid #e5dccf;
+  padding:12px;
+  border-radius:13px;
+  color:#222;
+}
+
 .summary{
-  color:#cbd5e1;
+  color:#444;
   line-height:1.7;
   margin-top:16px;
   font-size:15px;
 }
 
 .notice{
-  color:#94a3b8;
+  color:#666;
   font-size:14px;
   margin-top:18px;
 }
@@ -217,8 +267,9 @@ button{
 }
 
 .small{
-  font-size:13px;
-  color:#94a3b8;
+  font-size:12px;
+  color:#777;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -233,25 +284,33 @@ button{
 <div class="progress"><div class="progress-bar" id="progress"></div></div>
 
 <div class="step active">
-  <span class="badge">Assistente Inteligente A&F</span>
-  <h1>Simule seus uniformes de forma rápida e profissional.</h1>
-  <p>Responda algumas perguntas e receba uma estimativa personalizada para sua empresa, igreja ou equipe.</p>
+  <span class="badge">Simulador de orçamento</span>
+  <h1>Uniformes personalizados com qualidade, presença e propósito.</h1>
+  <p>Simule seu orçamento e veja uma estimativa para uniformizar sua empresa, igreja, evento ou equipe.</p>
 
-  <div class="value-list">
-    <div class="value-item">✅ Tecidos de alta qualidade</div>
-    <div class="value-item">✅ Personalização em alta definição</div>
-    <div class="value-item">✅ Layout digital para aprovação</div>
-    <div class="value-item">✅ Atendimento especializado</div>
-    <div class="value-item">🚚 Frete grátis para pedidos acima de 30 peças*</div>
+  <div class="authority">
+    <div>✅ +500 pedidos entregues</div>
+    <div>🚚 Envio para todo o Brasil</div>
+    <div>🎨 Layout para aprovação</div>
+    <div>⭐ Alta qualidade</div>
+  </div>
+
+  <div class="partners">
+    <h3>Empresas, igrejas e eventos que confiam na A&F</h3>
+    <div class="partner-grid">
+      <div class="partner">Parceiro 1</div>
+      <div class="partner">Parceiro 2</div>
+      <div class="partner">Parceiro 3</div>
+    </div>
+    <p style="color:#ccc;margin-top:12px;font-size:14px">Evento parceiro: Vigília Ressuscita</p>
   </div>
 
   <button class="btn-next" onclick="nextStep()">Iniciar minha simulação</button>
-  <p class="small">*Condição sujeita à região de entrega.</p>
 </div>
 
 <div class="step">
   <h1>Qual produto você precisa?</h1>
-  <p>Escolha o item principal do seu orçamento.</p>
+  <p>Escolha o produto principal para iniciar sua estimativa.</p>
   <div class="options" data-field="produto">
     <button class="option">Camiseta</button>
     <button class="option">Polo</button>
@@ -286,13 +345,13 @@ button{
 
 <div class="step">
   <h1 id="tituloPersonalizacao">Como deseja personalizar?</h1>
-  <p id="textoPersonalizacao">Nossa personalização é feita com acabamento profissional e alta definição.</p>
+  <p id="textoPersonalizacao">Personalização de alta definição, acabamento profissional e excelente durabilidade.</p>
   <div class="options" id="personalizacaoOptions" data-field="personalizacao"></div>
 </div>
 
 <div class="step">
   <h1>Quando pretende produzir?</h1>
-  <p>Isso nos ajuda a entender sua urgência e disponibilidade de produção.</p>
+  <p>Essa informação ajuda nossa equipe a entender sua urgência.</p>
   <div class="options" data-field="prazo">
     <button class="option">Quero produzir imediatamente</button>
     <button class="option">Nesta semana</button>
@@ -304,11 +363,17 @@ button{
 
 <div class="step">
   <h1>Já possui logotipo ou arte pronta?</h1>
-  <p>Se já tiver a arte, nossa equipe consegue agilizar o pré-layout.</p>
   <div class="options" data-field="logo">
     <button class="option">Sim, já tenho</button>
     <button class="option">Não tenho ainda</button>
   </div>
+</div>
+
+<div class="step">
+  <h1>Para quem devemos preparar a simulação?</h1>
+  <p>Esses dados ajudam nossa equipe a acompanhar seu orçamento.</p>
+  <input id="nome" placeholder="Seu nome">
+  <input id="telefone" placeholder="Seu WhatsApp com DDD">
 </div>
 
 <div class="step">
@@ -331,7 +396,7 @@ button{
     <div class="spinner"></div>
     <div>Calculando sua simulação...</div>
     <div>Analisando produto, quantidade e personalização...</div>
-    <div>Preparando sua estimativa personalizada...</div>
+    <div>Preparando sua condição personalizada...</div>
   </div>
 </div>
 
@@ -347,24 +412,26 @@ button{
   </div>
 
   <div class="freight" id="freteMsg"></div>
+  <div class="coupon" id="cupomMsg"></div>
 
   <div class="value-list">
     <div class="value-item">✅ Tecido de alta qualidade</div>
     <div class="value-item">✅ Personalização em alta definição</div>
     <div class="value-item">✅ Layout profissional para aprovação</div>
     <div class="value-item">✅ Atendimento especializado</div>
-    <div class="value-item">✅ Produção sob medida para sua equipe</div>
+    <div class="value-item">✅ Produção sob medida</div>
     <div class="value-item">✅ Controle de qualidade antes da entrega</div>
   </div>
 
   <div class="summary" id="resumo"></div>
 
   <p class="notice">
-    Os valores são uma estimativa aproximada. Para receber um orçamento detalhado
+    Os valores são estimativas aproximadas. Para receber um orçamento detalhado
     e avançar com o pedido, clique no botão abaixo.
   </p>
 
   <button class="whatsapp" onclick="enviarWhatsApp()">Receber orçamento detalhado no WhatsApp</button>
+  <p class="small">Ao enviar, você autoriza a A&F Uniformes a entrar em contato sobre esta solicitação.</p>
 </div>
 
 <div class="buttons" id="navButtons">
@@ -384,41 +451,20 @@ const data = {};
 function updateStep(){
   steps.forEach((step,i)=>step.classList.toggle("active",i===currentStep));
   document.getElementById("progress").style.width = (currentStep/(steps.length-1))*100 + "%";
-
-  const nav = document.getElementById("navButtons");
-  nav.style.display = (currentStep===0 || currentStep>=steps.length-2) ? "none" : "flex";
-
-  if(currentStep === 3) montarPersonalizacao();
-
-  if(currentStep === steps.length-2){
-    setTimeout(()=>{currentStep++;updateStep();},1800);
-  }
-
-  if(currentStep === steps.length-1) calcular();
+  document.getElementById("navButtons").style.display = (currentStep===0 || currentStep>=steps.length-2) ? "none" : "flex";
+  if(currentStep===3) montarPersonalizacao();
+  if(currentStep===steps.length-2){setTimeout(()=>{currentStep++;updateStep();},1800);}
+  if(currentStep===steps.length-1) calcular();
 }
 
-function nextStep(){
-  salvarInputs();
-  if(currentStep < steps.length-1){
-    currentStep++;
-    updateStep();
-  }
-}
-
-function prevStep(){
-  if(currentStep>0){
-    currentStep--;
-    updateStep();
-  }
-}
+function nextStep(){salvarInputs(); if(currentStep<steps.length-1){currentStep++;updateStep();}}
+function prevStep(){if(currentStep>0){currentStep--;updateStep();}}
 
 function salvarInputs(){
-  const empresa=document.getElementById("empresa");
-  const cidade=document.getElementById("cidade");
-  const cep=document.getElementById("cep");
-  if(empresa) data.empresa=empresa.value;
-  if(cidade) data.cidade=cidade.value;
-  if(cep) data.cep=cep.value;
+  ["nome","telefone","empresa","cidade","cep"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) data[id]=el.value;
+  });
 }
 
 function bindOptions(){
@@ -438,7 +484,6 @@ function montarPersonalizacao(){
   const box=document.getElementById("personalizacaoOptions");
   box.innerHTML="";
   data.personalizacao="";
-
   let opcoes=[];
 
   if(data.produto==="Boné"){
@@ -451,7 +496,7 @@ function montarPersonalizacao(){
     opcoes=["Sem personalização","Logo na perna"];
   }else{
     document.getElementById("tituloPersonalizacao").innerText="Como deseja personalizar?";
-    document.getElementById("textoPersonalizacao").innerText="Nossa personalização é feita com acabamento profissional, alta definição e excelente durabilidade.";
+    document.getElementById("textoPersonalizacao").innerText="Personalização de alta definição, acabamento profissional e excelente durabilidade.";
     opcoes=["Logo na frente","Frente e costas","Frente, costas e manga","Frente e barra"];
   }
 
@@ -461,7 +506,6 @@ function montarPersonalizacao(){
     btn.innerText=txt;
     box.appendChild(btn);
   });
-
   bindOptions();
 }
 
@@ -474,61 +518,16 @@ function quantidadeNumero(qtd){
 }
 
 function precoBase(produto,qtd){
-  if(produto==="Camiseta"){
-    if(qtd<=3) return 79;
-    if(qtd<=5) return 69;
-    if(qtd<=8) return 55;
-    if(qtd<=20) return 49.90;
-    if(qtd<=30) return 45.50;
-    if(qtd<=40) return 45;
-    if(qtd<=80) return 39.90;
-    return 35;
-  }
-
-  if(produto==="Polo"){
-    if(qtd<=3) return 79;
-    if(qtd<=5) return 69;
-    if(qtd<=20) return 65;
-    if(qtd<=40) return 59;
-    if(qtd<=80) return 55;
-    return 52;
-  }
-
-  if(produto==="Moletom"){
-    if(qtd<=3) return 149;
-    if(qtd<=5) return 139;
-    if(qtd<=20) return 129;
-    if(qtd<=30) return 119;
-    if(qtd<=40) return 115;
-    if(qtd<=80) return 109;
-    return 99;
-  }
-
-  if(produto==="Boné"){
-    if(qtd<=5) return 59;
-    if(qtd<=20) return 55;
-    if(qtd<=40) return 49;
-    if(qtd<=80) return 45;
-    return 42;
-  }
-
-  if(produto==="Calça de sarja"){
-    if(qtd<=3) return 109;
-    if(qtd<=5) return 99;
-    if(qtd<=8) return 95;
-    if(qtd<=20) return 89;
-    if(qtd<=30) return 85;
-    if(qtd<=40) return 82;
-    if(qtd<=80) return 79;
-    return 75;
-  }
-
+  if(produto==="Camiseta"){if(qtd<=3)return 79;if(qtd<=5)return 69;if(qtd<=8)return 55;if(qtd<=20)return 49.90;if(qtd<=30)return 45.50;if(qtd<=40)return 45;if(qtd<=80)return 39.90;return 35;}
+  if(produto==="Polo"){if(qtd<=3)return 79;if(qtd<=5)return 69;if(qtd<=20)return 65;if(qtd<=40)return 59;if(qtd<=80)return 55;return 52;}
+  if(produto==="Moletom"){if(qtd<=3)return 149;if(qtd<=5)return 139;if(qtd<=20)return 129;if(qtd<=30)return 119;if(qtd<=40)return 115;if(qtd<=80)return 109;return 99;}
+  if(produto==="Boné"){if(qtd<=5)return 59;if(qtd<=20)return 55;if(qtd<=40)return 49;if(qtd<=80)return 45;return 42;}
+  if(produto==="Calça de sarja"){if(qtd<=3)return 109;if(qtd<=5)return 99;if(qtd<=8)return 95;if(qtd<=20)return 89;if(qtd<=30)return 85;if(qtd<=40)return 82;if(qtd<=80)return 79;return 75;}
   return 0;
 }
 
 function calcular(){
   salvarInputs();
-
   const qtd=quantidadeNumero(data.quantidade);
   let unitario=precoBase(data.produto,qtd);
 
@@ -537,28 +536,26 @@ function calcular(){
     if(data.personalizacao==="Frente, costas e manga") unitario+=10;
     if(data.personalizacao==="Frente e barra") unitario+=7;
   }
-
-  if(data.produto==="Calça de sarja" && data.personalizacao==="Logo na perna"){
-    unitario+=5;
-  }
+  if(data.produto==="Calça de sarja" && data.personalizacao==="Logo na perna") unitario+=5;
 
   const total=unitario*qtd;
-
-  data.qtdNumero=qtd;
-  data.unitario=unitario;
-  data.total=total;
+  data.qtdNumero=qtd; data.unitario=unitario; data.total=total;
 
   document.getElementById("valorFinal").innerText="R$ "+total.toFixed(2).replace(".",",");
   document.getElementById("valorUnitario").innerText="Média aproximada: R$ "+unitario.toFixed(2).replace(".",",")+" por peça";
 
-  const freteMsg = qtd>=30
-    ? "🎉 Sua simulação desbloqueou frete grátis para pedidos acima de 30 peças."
+  document.getElementById("freteMsg").innerText = qtd>=30
+    ? "🎉 Sua simulação desbloqueou possibilidade de frete grátis para pedidos acima de 30 peças."
     : "🚚 Pedidos acima de 30 peças podem desbloquear frete grátis. Você está a "+(30-qtd)+" peças dessa condição.";
 
-  document.getElementById("freteMsg").innerText=freteMsg;
+  document.getElementById("cupomMsg").innerText = total>=1500
+    ? "🎁 Condição especial: pedidos acima de R$ 1.500 podem receber bônus ou desconto exclusivo na finalização."
+    : "🎁 Aumentando o pedido, você pode liberar condições corporativas especiais.";
 
   document.getElementById("resumo").innerHTML=
     `<strong>Resumo da simulação:</strong><br>
+    Nome: ${data.nome || "Não informado"}<br>
+    WhatsApp: ${data.telefone || "Não informado"}<br>
     Produto: ${data.produto || "Não informado"}<br>
     Quantidade: ${data.quantidade || "Não informado"}<br>
     Personalização: ${data.personalizacao || "Não informado"}<br>
@@ -571,14 +568,11 @@ function calcular(){
 
 function enviarWhatsApp(){
   calcular();
-
-  const frete=data.qtdNumero>=30
-    ? "Frete grátis desbloqueado para pedidos acima de 30 peças."
-    : "Frete será confirmado conforme CEP e modalidade de envio.";
-
-  const mensagem=
+  const mensagem =
 `Olá! Fiz uma simulação no A&F Smart Uniformes.
 
+Nome: ${data.nome || "Não informado"}
+WhatsApp: ${data.telefone || "Não informado"}
 Empresa/Igreja/Equipe: ${data.empresa || "Não informado"}
 Produto: ${data.produto || "Não informado"}
 Quantidade: ${data.quantidade || "Não informado"}
@@ -590,7 +584,6 @@ CEP: ${data.cep || "Não informado"}
 
 Estimativa aproximada: R$ ${data.total.toFixed(2).replace(".",",")}
 Média por peça: R$ ${data.unitario.toFixed(2).replace(".",",")}
-${frete}
 
 Gostaria de receber um orçamento detalhado para avançar com o pedido.`;
 
