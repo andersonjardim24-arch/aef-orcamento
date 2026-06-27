@@ -1,264 +1,319 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Orçamento Rápido | A&F Uniformes</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
-body{
-  min-height:100vh;
-  background:linear-gradient(135deg,#050505,#111827,#0f172a);
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.container{
-  width:100%;
-  max-width:520px;
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #050505, #111827, #0f172a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
-.card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.12);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:28px;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+.container {
+  width: 100%;
+  max-width: 540px;
 }
-.logo{
-  font-size:22px;
-  font-weight:800;
-  color:#22c55e;
-  margin-bottom:10px;
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
 }
-h1{
-  font-size:30px;
-  line-height:1.1;
-  margin-bottom:12px;
+
+.logo {
+  color: #22c55e;
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: .5px;
 }
-p{
-  color:#cbd5e1;
-  line-height:1.5;
-  margin-bottom:20px;
+
+.progress {
+  height: 8px;
+  background: #1f2937;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
-.step{
-  display:none;
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #22c55e;
+  transition: .3s;
 }
-.step.active{
-  display:block;
+
+.step {
+  display: none;
 }
-.progress{
-  height:8px;
-  background:#1f2937;
-  border-radius:99px;
-  overflow:hidden;
-  margin-bottom:24px;
+
+.step.active {
+  display: block;
 }
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:#22c55e;
-  transition:.3s;
+
+.badge {
+  display: inline-block;
+  background: #14532d;
+  color: #bbf7d0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 14px;
 }
-.options{
-  display:grid;
-  gap:12px;
+
+h1 {
+  font-size: 29px;
+  line-height: 1.12;
+  margin-bottom: 14px;
 }
-.option{
-  background:#111827;
-  border:1px solid #334155;
-  color:#fff;
-  padding:16px;
-  border-radius:14px;
-  cursor:pointer;
-  font-size:17px;
-  text-align:left;
+
+p {
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 18px;
 }
-.option:hover,.option.selected{
-  border-color:#22c55e;
-  background:#052e16;
+
+.options {
+  display: grid;
+  gap: 11px;
 }
-input{
-  width:100%;
-  padding:16px;
-  border-radius:14px;
-  border:1px solid #334155;
-  background:#111827;
-  color:#fff;
-  font-size:17px;
-  margin-top:10px;
+
+.option {
+  background: #111827;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 15px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  transition: .2s;
 }
-.buttons{
-  display:flex;
-  gap:10px;
-  margin-top:24px;
+
+.option:hover,
+.option.selected {
+  border-color: #22c55e;
+  background: #052e16;
 }
-button{
-  flex:1;
-  border:none;
-  border-radius:14px;
-  padding:15px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
+
+input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+  background: #111827;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 10px;
 }
-.btn-next{
-  background:#22c55e;
-  color:#052e16;
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
 }
-.btn-back{
-  background:#1f2937;
-  color:#fff;
+
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
 }
-.result{
-  background:#052e16;
-  border:1px solid #22c55e;
-  padding:20px;
-  border-radius:18px;
-  margin-top:16px;
+
+.btn-next {
+  background: #22c55e;
+  color: #052e16;
+  width: 100%;
 }
-.price{
-  font-size:32px;
-  color:#22c55e;
-  font-weight:900;
-  margin:10px 0;
+
+.btn-back {
+  background: #1f2937;
+  color: #fff;
+  flex: 1;
 }
-.notice{
-  font-size:14px;
-  color:#94a3b8;
-  margin-top:16px;
+
+.btn-advance {
+  background: #22c55e;
+  color: #052e16;
+  flex: 1;
 }
-.whatsapp{
-  width:100%;
-  background:#25D366;
-  color:#fff;
-  margin-top:20px;
+
+.result {
+  background: #052e16;
+  border: 1px solid #22c55e;
+  padding: 20px;
+  border-radius: 18px;
+  margin-top: 16px;
 }
-.badge{
-  display:inline-block;
-  background:#14532d;
-  color:#bbf7d0;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:14px;
+
+.price {
+  font-size: 34px;
+  color: #22c55e;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.notice {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 16px;
+}
+
+.whatsapp {
+  width: 100%;
+  background: #25D366;
+  color: white;
+  margin-top: 20px;
+}
+
+.summary {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 14px;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
-<div class="card">
+  <div class="card">
 
-<div class="logo">A&F UNIFORMES</div>
+    <div class="logo">A&F UNIFORMES</div>
 
-<div class="progress">
-  <div class="progress-bar" id="progress"></div>
-</div>
+    <div class="progress">
+      <div class="progress-bar" id="progress"></div>
+    </div>
 
-<div class="step active">
-  <span class="badge">Orçamento rápido</span>
-  <h1>Olá, seja bem-vindo ao orçamento rápido da A&F.</h1>
-  <p>Ao término do formulário você receberá um pré-orçamento estimado para decidir se deseja avançar.</p>
-  <button class="btn-next" onclick="nextStep()">Começar</button>
-</div>
+    <div class="step active">
+      <span class="badge">Orçamento rápido</span>
+      <h1>Olá, seja bem-vindo ao orçamento rápido da A&F.</h1>
+      <p>Ao término do formulário você receberá um pré-orçamento estimado para decidir se deseja avançar.</p>
+      <button class="btn-next" onclick="nextStep()">Começar</button>
+    </div>
 
-<div class="step">
-  <h1>Qual produto você precisa?</h1>
-  <div class="options" data-field="produto">
-    <button class="option">Camiseta</button>
-    <button class="option">Polo</button>
-    <button class="option">Moletom</button>
-    <button class="option">Boné</button>
-    <button class="option">Calça de sarja</button>
+    <div class="step">
+      <h1>Qual produto você precisa?</h1>
+      <div class="options" data-field="produto">
+        <button class="option">Camiseta</button>
+        <button class="option">Polo</button>
+        <button class="option">Moletom</button>
+        <button class="option">Boné</button>
+        <button class="option">Calça de sarja</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <h1>Quantidade aproximada</h1>
+      <div class="options" data-field="quantidade">
+        <button class="option">3 unidades</button>
+        <button class="option">5 unidades</button>
+        <button class="option">8 unidades</button>
+        <button class="option">10 unidades</button>
+        <button class="option">12 unidades</button>
+        <button class="option">15 unidades</button>
+        <button class="option">18 unidades</button>
+        <button class="option">20 unidades</button>
+        <button class="option">23 unidades</button>
+        <button class="option">25 unidades</button>
+        <button class="option">28 unidades</button>
+        <button class="option">30 unidades</button>
+        <button class="option">40 unidades</button>
+        <button class="option">50 unidades</button>
+        <button class="option">80 unidades</button>
+        <button class="option">100 ou mais</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <h1>Tipo de personalização</h1>
+      <div class="options" data-field="personalizacao">
+        <button class="option">Logo na frente</button>
+        <button class="option">Frente e costas</button>
+        <button class="option">Frente, costas e manga</button>
+        <button class="option">Frente e barra</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <h1>Quando pretende produzir?</h1>
+      <div class="options" data-field="prazo">
+        <button class="option">Quero produzir imediatamente</button>
+        <button class="option">Nesta semana</button>
+        <button class="option">Nos próximos 30 dias</button>
+        <button class="option">Nos próximos 3 meses</button>
+        <button class="option">Estou apenas pesquisando</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <h1>Já possui logotipo ou arte pronta?</h1>
+      <div class="options" data-field="logo">
+        <button class="option">Sim, já tenho</button>
+        <button class="option">Não tenho ainda</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <h1>Nome da empresa, igreja ou equipe</h1>
+      <input id="empresa" placeholder="Ex: Nova Era, MVA, Igreja..." />
+    </div>
+
+    <div class="step">
+      <h1>Cidade/UF</h1>
+      <input id="cidade" placeholder="Ex: Porto Alegre/RS" />
+    </div>
+
+    <div class="step">
+      <h1>CEP para envio</h1>
+      <input id="cep" placeholder="Digite o CEP" />
+    </div>
+
+    <div class="step">
+      <h1>Seu pré-orçamento</h1>
+      <p>Os valores são uma estimativa aproximada para você decidir.</p>
+
+      <div class="result">
+        <div>Estimativa aproximada:</div>
+        <div class="price" id="valorFinal">R$ 0,00</div>
+        <div id="valorUnitario"></div>
+      </div>
+
+      <div class="summary" id="resumo"></div>
+
+      <p class="notice">
+        Caso queira um orçamento detalhado para já avançar com o pedido,
+        clique no botão abaixo e nossa equipe irá auxiliar você.
+      </p>
+
+      <button class="whatsapp" onclick="enviarWhatsApp()">Receber orçamento detalhado no WhatsApp</button>
+    </div>
+
+    <div class="buttons" id="navButtons">
+      <button class="btn-back" onclick="prevStep()">Voltar</button>
+      <button class="btn-advance" onclick="nextStep()">Avançar</button>
+    </div>
+
   </div>
-</div>
-
-<div class="step">
-  <h1>Quantidade aproximada</h1>
-  <div class="options" data-field="quantidade">
-    <button class="option">3 unidades</button>
-    <button class="option">5 unidades</button>
-    <button class="option">6 a 8 unidades</button>
-    <button class="option">10 a 20 unidades</button>
-    <button class="option">21 a 30 unidades</button>
-    <button class="option">31 a 40 unidades</button>
-    <button class="option">40 a 80 unidades</button>
-    <button class="option">100 ou mais</button>
-  </div>
-</div>
-
-<div class="step">
-  <h1>Tipo de personalização</h1>
-  <div class="options" data-field="personalizacao">
-    <button class="option">Logo na frente</button>
-    <button class="option">Frente e costas</button>
-    <button class="option">Frente, costas e manga</button>
-    <button class="option">Frente e barra</button>
-  </div>
-</div>
-
-<div class="step">
-  <h1>Quando pretende produzir?</h1>
-  <div class="options" data-field="prazo">
-    <button class="option">Nesta semana</button>
-    <button class="option">Nos próximos 30 dias</button>
-    <button class="option">Nos próximos 3 meses</button>
-    <button class="option">Quero produzir imediatamente</button>
-    <button class="option">Estou apenas pesquisando</button>
-  </div>
-</div>
-
-<div class="step">
-  <h1>Já possui logotipo ou arte pronta?</h1>
-  <div class="options" data-field="logo">
-    <button class="option">Sim, já tenho</button>
-    <button class="option">Não tenho ainda</button>
-  </div>
-</div>
-
-<div class="step">
-  <h1>Nome da empresa</h1>
-  <input id="empresa" placeholder="Digite o nome da empresa">
-</div>
-
-<div class="step">
-  <h1>Cidade</h1>
-  <input id="cidade" placeholder="Ex: Porto Alegre/RS">
-</div>
-
-<div class="step">
-  <h1>CEP</h1>
-  <input id="cep" placeholder="Digite o CEP para envio">
-</div>
-
-<div class="step">
-  <h1>Seu pré-orçamento</h1>
-  <p>Os valores são uma estimativa aproximada para você decidir.</p>
-
-  <div class="result">
-    <div>Estimativa aproximada:</div>
-    <div class="price" id="valorFinal">R$ 0,00</div>
-    <div id="valorUnitario"></div>
-  </div>
-
-  <p class="notice">
-    Caso queira um orçamento detalhado para já avançar com o pedido,
-    clique no botão abaixo e nossa equipe irá auxiliar você.
-  </p>
-
-  <button class="whatsapp" onclick="enviarWhatsApp()">Receber orçamento detalhado no WhatsApp</button>
-</div>
-
-<div class="buttons" id="navButtons">
-  <button class="btn-back" onclick="prevStep()">Voltar</button>
-  <button class="btn-next" onclick="nextStep()">Avançar</button>
-</div>
-
-</div>
 </div>
 
 <script>
@@ -269,23 +324,20 @@ const steps = document.querySelectorAll(".step");
 const data = {};
 
 function updateStep(){
-  steps.forEach((step,i)=>step.classList.toggle("active",i===currentStep));
-  document.getElementById("progress").style.width = ((currentStep)/(steps.length-1))*100 + "%";
+  steps.forEach((step, i) => step.classList.toggle("active", i === currentStep));
+  document.getElementById("progress").style.width = (currentStep / (steps.length - 1)) * 100 + "%";
 
   const nav = document.getElementById("navButtons");
-  if(currentStep === 0 || currentStep === steps.length-1){
-    nav.style.display = "none";
-  }else{
-    nav.style.display = "flex";
-  }
+  nav.style.display = (currentStep === 0 || currentStep === steps.length - 1) ? "none" : "flex";
 
-  if(currentStep === steps.length-1){
+  if(currentStep === steps.length - 1){
     calcular();
   }
 }
 
 function nextStep(){
-  if(currentStep < steps.length-1){
+  if(currentStep < steps.length - 1){
+    salvarInputs();
     currentStep++;
     updateStep();
   }
@@ -298,95 +350,91 @@ function prevStep(){
   }
 }
 
-document.querySelectorAll(".options").forEach(group=>{
-  group.querySelectorAll(".option").forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      group.querySelectorAll(".option").forEach(b=>b.classList.remove("selected"));
+function salvarInputs(){
+  const empresa = document.getElementById("empresa");
+  const cidade = document.getElementById("cidade");
+  const cep = document.getElementById("cep");
+
+  if(empresa) data.empresa = empresa.value;
+  if(cidade) data.cidade = cidade.value;
+  if(cep) data.cep = cep.value;
+}
+
+document.querySelectorAll(".options").forEach(group => {
+  group.querySelectorAll(".option").forEach(btn => {
+    btn.addEventListener("click", () => {
+      group.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
       data[group.dataset.field] = btn.innerText;
-      setTimeout(nextStep,250);
+      setTimeout(nextStep, 230);
     });
   });
 });
 
-function precoBase(produto, quantidade){
+function quantidadeNumero(qtd){
+  if(!qtd) return 1;
+  if(qtd === "100 ou mais") return 100;
+  return Number(qtd.replace(/\D/g, ""));
+}
+
+function precoBase(produto, qtd){
   if(produto === "Camiseta"){
-    if(quantidade === "3 unidades") return 79;
-    if(quantidade === "5 unidades") return 69;
-    if(quantidade === "6 a 8 unidades") return 55;
-    if(quantidade === "10 a 20 unidades") return 49.90;
-    if(quantidade === "21 a 30 unidades") return 45.50;
-    if(quantidade === "31 a 40 unidades") return 45;
-    if(quantidade === "40 a 80 unidades") return 39.90;
-    if(quantidade === "100 ou mais") return 35;
+    if(qtd <= 3) return 79;
+    if(qtd <= 5) return 69;
+    if(qtd <= 8) return 55;
+    if(qtd <= 20) return 49.90;
+    if(qtd <= 30) return 45.50;
+    if(qtd <= 40) return 45;
+    if(qtd <= 80) return 39.90;
+    return 35;
   }
 
   if(produto === "Polo"){
-    if(quantidade === "3 unidades") return 79;
-    if(quantidade === "5 unidades") return 69;
-    if(quantidade === "6 a 8 unidades") return 65;
-    if(quantidade === "10 a 20 unidades") return 65;
-    if(quantidade === "21 a 30 unidades") return 59;
-    if(quantidade === "31 a 40 unidades") return 59;
-    if(quantidade === "40 a 80 unidades") return 55;
-    if(quantidade === "100 ou mais") return 52;
+    if(qtd <= 3) return 79;
+    if(qtd <= 5) return 69;
+    if(qtd <= 20) return 65;
+    if(qtd <= 40) return 59;
+    if(qtd <= 80) return 55;
+    return 52;
   }
 
   if(produto === "Moletom"){
-    if(quantidade === "3 unidades") return 149;
-    if(quantidade === "5 unidades") return 139;
-    if(quantidade === "6 a 8 unidades") return 129;
-    if(quantidade === "10 a 20 unidades") return 129;
-    if(quantidade === "21 a 30 unidades") return 119;
-    if(quantidade === "31 a 40 unidades") return 115;
-    if(quantidade === "40 a 80 unidades") return 109;
-    if(quantidade === "100 ou mais") return 99;
+    if(qtd <= 3) return 149;
+    if(qtd <= 5) return 139;
+    if(qtd <= 20) return 129;
+    if(qtd <= 30) return 119;
+    if(qtd <= 40) return 115;
+    if(qtd <= 80) return 109;
+    return 99;
   }
 
   if(produto === "Boné"){
-    if(quantidade === "3 unidades") return 59;
-    if(quantidade === "5 unidades") return 59;
-    if(quantidade === "6 a 8 unidades") return 55;
-    if(quantidade === "10 a 20 unidades") return 55;
-    if(quantidade === "21 a 30 unidades") return 49;
-    if(quantidade === "31 a 40 unidades") return 49;
-    if(quantidade === "40 a 80 unidades") return 45;
-    if(quantidade === "100 ou mais") return 42;
+    if(qtd <= 5) return 59;
+    if(qtd <= 20) return 55;
+    if(qtd <= 40) return 49;
+    if(qtd <= 80) return 45;
+    return 42;
   }
 
   if(produto === "Calça de sarja"){
-    if(quantidade === "3 unidades") return 109;
-    if(quantidade === "5 unidades") return 99;
-    if(quantidade === "6 a 8 unidades") return 95;
-    if(quantidade === "10 a 20 unidades") return 89;
-    if(quantidade === "21 a 30 unidades") return 85;
-    if(quantidade === "31 a 40 unidades") return 82;
-    if(quantidade === "40 a 80 unidades") return 79;
-    if(quantidade === "100 ou mais") return 75;
+    if(qtd <= 3) return 109;
+    if(qtd <= 5) return 99;
+    if(qtd <= 8) return 95;
+    if(qtd <= 20) return 89;
+    if(qtd <= 30) return 85;
+    if(qtd <= 40) return 82;
+    if(qtd <= 80) return 79;
+    return 75;
   }
 
   return 0;
 }
 
-function quantidadeNumero(qtd){
-  if(qtd === "3 unidades") return 3;
-  if(qtd === "5 unidades") return 5;
-  if(qtd === "6 a 8 unidades") return 8;
-  if(qtd === "10 a 20 unidades") return 20;
-  if(qtd === "21 a 30 unidades") return 30;
-  if(qtd === "31 a 40 unidades") return 40;
-  if(qtd === "40 a 80 unidades") return 80;
-  if(qtd === "100 ou mais") return 100;
-  return 1;
-}
-
 function calcular(){
-  data.empresa = document.getElementById("empresa").value;
-  data.cidade = document.getElementById("cidade").value;
-  data.cep = document.getElementById("cep").value;
+  salvarInputs();
 
-  let unitario = precoBase(data.produto,data.quantidade);
   const qtd = quantidadeNumero(data.quantidade);
+  let unitario = precoBase(data.produto, qtd);
 
   if(data.personalizacao === "Frente e costas") unitario += 5;
   if(data.personalizacao === "Frente, costas e manga") unitario += 10;
@@ -394,6 +442,7 @@ function calcular(){
 
   const total = unitario * qtd;
 
+  data.qtdNumero = qtd;
   data.unitario = unitario;
   data.total = total;
 
@@ -402,6 +451,13 @@ function calcular(){
 
   document.getElementById("valorUnitario").innerText =
     "Média aproximada: R$ " + unitario.toFixed(2).replace(".", ",") + " por peça";
+
+  document.getElementById("resumo").innerHTML =
+    `<strong>Produto:</strong> ${data.produto || "Não informado"}<br>
+     <strong>Quantidade:</strong> ${data.quantidade || "Não informado"}<br>
+     <strong>Personalização:</strong> ${data.personalizacao || "Não informado"}<br>
+     <strong>Prazo:</strong> ${data.prazo || "Não informado"}<br>
+     <strong>Logo/arte:</strong> ${data.logo || "Não informado"}`;
 }
 
 function enviarWhatsApp(){
@@ -410,21 +466,22 @@ function enviarWhatsApp(){
   const mensagem =
 `Olá! Fiz uma simulação no orçamento rápido da A&F Uniformes.
 
-Empresa: ${data.empresa || "Não informado"}
+Empresa/Igreja/Equipe: ${data.empresa || "Não informado"}
 Produto: ${data.produto || "Não informado"}
 Quantidade: ${data.quantidade || "Não informado"}
 Personalização: ${data.personalizacao || "Não informado"}
-Prazo: ${data.prazo || "Não informado"}
+Prazo para produção: ${data.prazo || "Não informado"}
 Possui logo/arte: ${data.logo || "Não informado"}
-Cidade: ${data.cidade || "Não informado"}
+Cidade/UF: ${data.cidade || "Não informado"}
 CEP: ${data.cep || "Não informado"}
 
 Estimativa aproximada: R$ ${data.total.toFixed(2).replace(".", ",")}
 Média por peça: R$ ${data.unitario.toFixed(2).replace(".", ",")}
 
-Gostaria de receber um orçamento detalhado para avançar com o pedido.`;
+Os valores são uma estimativa aproximada. Gostaria de receber um orçamento detalhado para avançar com o pedido.`;
 
-  window.open("https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(mensagem), "_blank");
+  const url = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(mensagem);
+  window.open(url, "_blank");
 }
 
 updateStep();
