@@ -444,6 +444,7 @@ button{
 
 <script>
 const whatsapp = "5551992668360";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzGhE4XG_2-zSt8oHmWzraL0ESJdr3jOvG1eMZbW25srzsTP1BQmdY0Y0u1DaFueP74EQ/exec";
 let currentStep = 0;
 const steps = document.querySelectorAll(".step");
 const data = {};
@@ -566,8 +567,41 @@ function calcular(){
     CEP: ${data.cep || "Não informado"}`;
 }
 
+function classificarLead(){
+  const qtd = data.qtdNumero || 0;
+
+  if(qtd >= 20 && (data.prazo === "Quero produzir imediatamente" || data.prazo === "Nesta semana")){
+    return "🔥 Lead Quente";
+  }
+
+  if(qtd >= 10 && data.prazo !== "Estou apenas pesquisando"){
+    return "🟡 Lead Morno";
+  }
+
+  return "❄️ Lead Frio";
+}
+
+function salvarLead(){
+  data.status = classificarLead();
+  data.origem = "A&F Smart Uniformes";
+
+  return fetch(scriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+}
+
 function enviarWhatsApp(){
   calcular();
+
+  data.status = classificarLead();
+
+  salvarLead();
+
   const mensagem =
 `Olá! Fiz uma simulação no A&F Smart Uniformes.
 
@@ -584,12 +618,12 @@ CEP: ${data.cep || "Não informado"}
 
 Estimativa aproximada: R$ ${data.total.toFixed(2).replace(".",",")}
 Média por peça: R$ ${data.unitario.toFixed(2).replace(".",",")}
+Classificação: ${data.status}
 
 Gostaria de receber um orçamento detalhado para avançar com o pedido.`;
 
   window.open("https://wa.me/"+whatsapp+"?text="+encodeURIComponent(mensagem),"_blank");
 }
-
 updateStep();
 </script>
 
