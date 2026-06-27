@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orçamento A&F Uniformes</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;color:#222}
+.container{max-width:520px;margin:auto;padding:24px}
+.card{background:#fff;padding:24px;border-radius:18px;box-shadow:0 4px 18px #0001}
+h1{font-size:26px;margin-bottom:8px}
+p{color:#555}
+label{font-weight:bold;display:block;margin-top:16px}
+select,input{width:100%;padding:13px;margin-top:6px;border-radius:10px;border:1px solid #ccc;font-size:16px}
+.resultado{background:#e9f7ef;padding:16px;border-radius:12px;margin-top:20px;font-size:18px;font-weight:bold}
+button{width:100%;padding:16px;background:#25D366;color:white;border:0;border-radius:12px;font-size:18px;font-weight:bold;margin-top:20px}
+small{display:block;margin-top:12px;color:#777}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Orçamento rápido</h1>
+<p>Simule uma estimativa para uniformes personalizados da sua equipe.</p>
+
+<label>Produto</label>
+<select id="produto" onchange="calcular()">
+<option value="camiseta">Camiseta personalizada</option>
+<option value="polo">Polo personalizada</option>
+<option value="moletom">Moletom personalizado</option>
+<option value="bone">Boné personalizado</option>
+</select>
+
+<label>Quantidade</label>
+<select id="quantidade" onchange="calcular()">
+<option value="5">5 a 10 peças</option>
+<option value="10">11 a 20 peças</option>
+<option value="20">21 a 50 peças</option>
+<option value="50">Acima de 50 peças</option>
+</select>
+
+<label>Personalização</label>
+<select id="personalizacao" onchange="calcular()">
+<option value="frente">Logo na frente</option>
+<option value="frente_costas">Frente e costas</option>
+<option value="completa">Frente, costas e manga</option>
+</select>
+
+<label>Quando pretende produzir?</label>
+<select id="prazo">
+<option>Nos próximos 7 dias</option>
+<option>Nos próximos 30 dias</option>
+<option>Nos próximos 3 meses</option>
+<option>Estou apenas pesquisando</option>
+</select>
+
+<label>Cidade/UF</label>
+<input id="cidade" placeholder="Ex: Porto Alegre/RS">
+
+<label>Nome da empresa/igreja</label>
+<input id="empresa" placeholder="Ex: Nova Era">
+
+<div class="resultado" id="resultado">
+Estimativa: R$ 0,00
+</div>
+
+<button onclick="enviarWhatsApp()">Receber orçamento no WhatsApp</button>
+
+<small>*Valores são estimativas. O orçamento final pode variar conforme arte, tecido, quantidade e detalhes da personalização.</small>
+
+</div>
+</div>
+
+<script>
+const whatsapp = "5551992668360"; // TROQUE PELO SEU NÚMERO COM DDD
+
+function calcular(){
+  const produto = document.getElementById("produto").value;
+  const qtd = Number(document.getElementById("quantidade").value);
+  const pers = document.getElementById("personalizacao").value;
+
+  let preco = 0;
+
+  if(produto === "camiseta"){
+    if(qtd === 5) preco = 59.90;
+    if(qtd === 10) preco = 49.90;
+    if(qtd === 20) preco = 45.00;
+    if(qtd === 50) preco = 42.00;
+  }
+
+  if(produto === "polo"){
+    if(qtd === 5) preco = 69.00;
+    if(qtd === 10) preco = 65.00;
+    if(qtd === 20) preco = 59.00;
+    if(qtd === 50) preco = 55.00;
+  }
+
+  if(produto === "moletom"){
+    if(qtd === 5) preco = 139.00;
+    if(qtd === 10) preco = 129.00;
+    if(qtd === 20) preco = 119.00;
+    if(qtd === 50) preco = 109.00;
+  }
+
+  if(produto === "bone"){
+    if(qtd === 5) preco = 55.00;
+    if(qtd === 10) preco = 49.90;
+    if(qtd === 20) preco = 45.00;
+    if(qtd === 50) preco = 39.90;
+  }
+
+  if(pers === "frente_costas") preco += 0;
+  if(pers === "completa") preco += 0;
+
+  let total = preco * qtd;
+
+  document.getElementById("resultado").innerText =
+    "Estimativa: R$ " + total.toFixed(2).replace(".", ",") +
+    " | Média: R$ " + preco.toFixed(2).replace(".", ",") + " por peça";
+
+  return {preco,total,qtd};
+}
+
+function enviarWhatsApp(){
+  const calc = calcular();
+
+  const produto = document.getElementById("produto").selectedOptions[0].text;
+  const quantidade = document.getElementById("quantidade").selectedOptions[0].text;
+  const personalizacao = document.getElementById("personalizacao").selectedOptions[0].text;
+  const prazo = document.getElementById("prazo").value;
+  const cidade = document.getElementById("cidade").value;
+  const empresa = document.getElementById("empresa").value;
+
+  const mensagem =
+`Olá! Fiz uma simulação no site da A&F Uniformes.
+
+Empresa/Igreja: ${empresa}
+Produto: ${produto}
+Quantidade: ${quantidade}
+Personalização: ${personalizacao}
+Prazo: ${prazo}
+Cidade/UF: ${cidade}
+
+Estimativa: R$ ${calc.total.toFixed(2).replace(".", ",")}
+Média por peça: R$ ${calc.preco.toFixed(2).replace(".", ",")}
+
+Gostaria de receber um orçamento detalhado.`;
+
+  const url = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(mensagem);
+  window.open(url, "_blank");
+}
+
+calcular();
+</script>
+
+</body>
+</html>
