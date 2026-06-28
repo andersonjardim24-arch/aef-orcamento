@@ -115,21 +115,22 @@ function renderHome() {
       <div class="client-grid">
 
         <div class="client">
-          <div class="client-img">Foto</div>
+          <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
           <strong>Primeiro Reino Burger</strong><br>
           <span>@primeiroreinoburger</span>
           <p class="small">355 mil seguidores</p>
         </div>
 
         <div class="client">
-          <div class="client-img">Foto</div>
-          <strong>Construvidros</strong><br>
-          <span>@construvidrosrs</span>
-          <p class="small">11,9 mil seguidores</p>
+          <img class="client-img" src="alufort-esquadrias.jpg" alt="Alufort Esquadrias">
+          <strong>Allufort Esquadrias</strong><br>
+          <span>@allufortesquadrias</span>
+          <p class="small">52 mil seguidores</p>
         </div>
 
         <div class="client">
-          <div class="client-img">Foto</div>
+          <div class="client">
+    <img class="client-img" src="no-stress.jpg" alt="No Stress">
           <strong>No Stress</strong><br>
           <span>@nostress</span>
           <p class="small">Cliente A&F Uniformes</p>
