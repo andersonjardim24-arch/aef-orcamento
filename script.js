@@ -78,7 +78,12 @@ function avancar() {
     render();
   }
 }
-
+function voltar() {
+  if (state.step > 0) {
+    state.step--;
+    render();
+  }
+}
 function renderHome() {
   screen.innerHTML = `
     <span class="badge">Orçamento rápido A&F</span>
