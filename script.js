@@ -39,7 +39,7 @@ function render() {
   const current = steps[state.step];
 
   updateProgress();
-
+renderMiniCart();
   backBtn.classList.toggle("hidden", state.step === 0 || current === "loading" || current === "resultado");
   nextBtn.classList.toggle("hidden", ["home","perfil","produto","quantidade","personalizacao","carrinho","prazo","decisor","condicao","promocao","loading","resultado"].includes(current));
 
@@ -626,4 +626,29 @@ function adicionarMaisNoResultado() {
   state.leadSaved = false;
   state.step = 2;
   render();
+}
+function renderMiniCart() {
+  let miniCart = document.getElementById("miniCart");
+
+  if (!miniCart) {
+    miniCart = document.createElement("div");
+    miniCart.id = "miniCart";
+    screen.before(miniCart);
+  }
+
+  if (!state.cart.length || state.step === 0 || state.step >= 12) {
+    miniCart.innerHTML = "";
+    miniCart.style.display = "none";
+    return;
+  }
+
+  calcularTotal();
+
+  miniCart.style.display = "block";
+  miniCart.innerHTML = `
+    <div class="mini-cart">
+      🛒 ${state.cart.length} item(ns) no orçamento
+      <strong>R$ ${moeda(state.data.total)}</strong>
+    </div>
+  `;
 }
