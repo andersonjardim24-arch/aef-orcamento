@@ -592,8 +592,9 @@ Média por peça: R$ ${moeda(state.data.unitario)}
 Gostaria de avançar com meu pedido e receber atendimento da equipe.
 `;
 if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead');
+    fbq('track', 'Contact');
 }
+ 
   window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
 }
 
