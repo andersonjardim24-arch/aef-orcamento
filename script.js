@@ -68,7 +68,12 @@ function avancar() {
   salvarInputs();
 
   if (state.step < steps.length - 1) {
-   registrarEvento("Etapa concluída", steps[state.step]);
+    try {
+      registrarEvento("Etapa concluída", steps[state.step]);
+    } catch (erro) {
+      console.log("Erro evento:", erro);
+    }
+
     state.step++;
     render();
   }
