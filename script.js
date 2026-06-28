@@ -309,7 +309,7 @@ function renderResultado() {
       ✅ Personalização em alta definição<br>
       ✅ Layout profissional para aprovação<br>
       ✅ Atendimento especializado<br>
-      ✅ Produção sob medida
+      ✅ Produção ágil
     </div>
 
     <div class="summary">
