@@ -79,34 +79,32 @@ function voltar() {
   }
 }
 
-function escolher(campo, valor, proximo = true) {
-  state.data[campo] = valor;
-  if (proximo) avancar();
-}
-
 function renderHome() {
   screen.innerHTML = `
     <span class="badge">Orçamento rápido A&F</span>
 
-    <h1>👕 Faça seu orçamento em menos de 1 minuto.</h1>
+    <h1>👕 Faça seu orçamento em menos de 1 minuto</h1>
 
     <p>
-      Rápido, simples e sem compromisso.
-      Descubra uma estimativa para uniformes personalizados de forma organizada,
-      sem precisar esperar atendimento no WhatsApp.
+      Escolha os produtos, informe a quantidade e receba uma estimativa rápida e organizada.
+      Sem esperar atendimento, sem enrolação e sem compromisso.
     </p>
 
     <div class="box green">
-      👇 Basta clicar no botão abaixo para começar seu orçamento.
+      👇 Para começar, clique no botão abaixo.
     </div>
 
     <button class="btn primary" onclick="avancar()">
       📋 FAZER MEU ORÇAMENTO AGORA
     </button>
 
+    <p class="small">
+      Leva menos de 1 minuto. Depois, se quiser avançar, nossa equipe te atende pelo WhatsApp.
+    </p>
+
     <div class="box gold">
       ⭐⭐⭐⭐⭐<br>
-      <strong>Empresas, igrejas e eventos já confiaram na A&F Uniformes.</strong><br>
+      <strong>Uniformes personalizados para empresas, igrejas, eventos e equipes.</strong><br>
       Produção sob medida, layout para aprovação e atendimento para todo o Brasil.
     </div>
 
@@ -121,18 +119,18 @@ function renderHome() {
           <span>@primeiroreinoburger</span>
           <p class="small">Cliente A&F Uniformes</p>
         </div>
-        
-<div class="client">
-    <img class="client-img" src="no-stress.jpg" alt="No Stress">
-    <strong>No Stress</strong><br>
-    <span>@nostress</span>
-    <p class="small">Cliente A&F Uniformes</p>
-</div>
+
+        <div class="client">
+          <img class="client-img" src="no-stress.jpg" alt="No Stress">
+          <strong>No Stress</strong><br>
+          <span>@nostress</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
 
         <div class="client">
           <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
           <strong>Allufort Esquadrias</strong><br>
-          <span>@allufort</span>
+          <span>@allufortesquadrias</span>
           <p class="small">Cliente A&F Uniformes</p>
         </div>
 
