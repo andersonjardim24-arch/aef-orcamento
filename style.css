@@ -195,23 +195,21 @@ input{
 }
 
 .client{
-  background:#f8f5ef;
-  border:1px solid #e5dccf;
-  border-radius:16px;
-  padding:10px;
-  text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
 }
 
 .client-img{
-  height:95px;
-  border-radius:12px;
-  background:#ddd3c4;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#777;
-  font-size:13px;
-  margin-bottom:8px;
+    width:120px;
+    height:120px;
+    border-radius:20px;
+    object-fit:cover;
+    margin:0 auto 15px;
+    display:block;
 }
 
 .client span{
