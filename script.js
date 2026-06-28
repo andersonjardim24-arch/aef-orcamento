@@ -86,31 +86,32 @@ function escolher(campo, valor, proximo = true) {
 
 function renderHome() {
   screen.innerHTML = `
-    <span class="badge">Consultor Inteligente de Uniformes</span>
+    <span class="badge">Orçamento rápido A&F</span>
 
-    <h1>A&F Smart Uniformes</h1>
+    <h1>👕 Faça seu orçamento em menos de 1 minuto.</h1>
 
     <p>
-      Receba uma estimativa personalizada em menos de 2 minutos.
-      Monte seu orçamento sem compromisso e descubra a melhor opção
-      para sua empresa, igreja, evento ou equipe.
+      Rápido, simples e sem compromisso.
+      Descubra uma estimativa para uniformes personalizados de forma organizada,
+      sem precisar esperar atendimento no WhatsApp.
     </p>
+
+    <div class="box green">
+      👇 Basta clicar no botão abaixo para começar seu orçamento.
+    </div>
+
+    <button class="btn primary" onclick="avancar()">
+      📋 FAZER MEU ORÇAMENTO AGORA
+    </button>
 
     <div class="box gold">
       ⭐⭐⭐⭐⭐<br>
-      <strong>Mais de 500 pedidos entregues em todo o Brasil.</strong><br>
-      Uniformes personalizados com qualidade, cuidado e aprovação de layout antes da produção.
-    </div>
-
-    <div class="authority">
-      <div>✅ Produção ágil</div>
-      <div>🎨 Layout para aprovação</div>
-      <div>🚚 Envio para todo Brasil</div>
-      <div>⭐ Alta qualidade</div>
+      <strong>Empresas, igrejas e eventos já confiaram na A&F Uniformes.</strong><br>
+      Produção sob medida, layout para aprovação e atendimento para todo o Brasil.
     </div>
 
     <div class="clients">
-      <h3>Empresas e eventos que confiam na A&F Uniformes</h3>
+      <h3>Alguns clientes que confiam na A&F Uniformes</h3>
 
       <div class="client-grid">
 
@@ -118,40 +119,32 @@ function renderHome() {
           <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
           <strong>Primeiro Reino Burger</strong><br>
           <span>@primeiroreinoburger</span>
-          <p class="small">355 mil seguidores</p>
-        </div>
-
-        <div class="client">
-          <img class="client-img" src="allufort-esquadrias.jpg" alt="Alufort Esquadrias">
-          <strong>Allufort Esquadrias</strong><br>
-          <span>@allufortesquadrias</span>
-          <p class="small">52 mil seguidores</p>
-        </div>
-        
-          <div class="client">
-    <img class="client-img" src="no-stress.jpg" alt="No Stress">
-          <strong>No Stress</strong><br>
-          <span>@nostress</span>
           <p class="small">Cliente A&F Uniformes</p>
         </div>
 
         <div class="client">
-         <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigília Ressuscita">
-          <strong>Vigília Ressuscita</strong><br>
+          <img class="client-img" src="constru-vidros.jpg" alt="Construvidros">
+          <strong>Construvidros</strong><br>
+          <span>@construvidrosrs</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
+          <strong>Allufort Esquadrias</strong><br>
+          <span>@allufort</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigilhão Ressuscita">
+          <strong>Vigilhão Ressuscita</strong><br>
           <span>@vigiliaressuscita</span>
           <p class="small">Evento parceiro</p>
         </div>
 
       </div>
     </div>
-
-    <div class="box green">
-      Sua empresa pode ser a próxima a fazer parte dessa história.
-    </div>
-
-    <button class="btn primary" onclick="avancar()">
-      🚀 Começar minha simulação
-    </button>
   `;
 }
 
