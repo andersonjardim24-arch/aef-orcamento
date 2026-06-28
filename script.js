@@ -151,11 +151,11 @@ function renderPerfil() {
     <h1>Para quem será esse uniforme?</h1>
     <p>Assim conseguimos montar uma estimativa mais adequada para sua necessidade.</p>
     <div class="grid">
-      ${btn("perfil","Empresa / Equipe")}
-      ${btn("perfil","Igreja / Ministério")}
-      ${btn("perfil","Evento / Congresso")}
-      ${btn("perfil","Prestação de serviço")}
-      ${btn("perfil","Escola / Projeto")}
+      ${btn("objetivo","Empresa / Equipe")}
+      ${btn("objetivo","Igreja / Ministério")}
+      ${btn("objetivo","Evento / Congresso")}
+      ${btn("objetivo","Prestação de serviço")}
+      ${btn("objetivo","Escola / Projeto")}
     </div>
   `;
 }
@@ -399,7 +399,8 @@ Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.
 }
 
 function btn(campo, valor) {
-  return `<button class="option" onclick="escolher('${campo}','${valor}'); avancar();">${valor}</button>`;
+  return `<button class="option" onclick="escolher('${campo}','${valor}')">${valor}</button>`;
+}
 
 function btnProduto(produto) {
   return `<button class="option" onclick="selecionarProduto('${produto}')">${produto}</button>`;
