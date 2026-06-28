@@ -87,27 +87,71 @@ function escolher(campo, valor, proximo = true) {
 function renderHome() {
   screen.innerHTML = `
     <span class="badge">Consultor Inteligente de Uniformes</span>
-    <h1>Monte uma estimativa personalizada para sua empresa, igreja ou equipe.</h1>
-    <p>Em poucos passos, ajudamos você a visualizar o investimento aproximado e as melhores condições para o seu pedido.</p>
+
+    <h1>A&F Smart Uniformes</h1>
+
+    <p>
+      Receba uma estimativa personalizada em menos de 2 minutos.
+      Monte seu orçamento sem compromisso e descubra a melhor opção
+      para sua empresa, igreja, evento ou equipe.
+    </p>
+
+    <div class="box gold">
+      ⭐⭐⭐⭐⭐<br>
+      <strong>Mais de 500 pedidos entregues em todo o Brasil.</strong><br>
+      Uniformes personalizados com qualidade, cuidado e aprovação de layout antes da produção.
+    </div>
 
     <div class="authority">
-      <div>✅ +500 pedidos entregues</div>
-      <div>🚚 Envio para todo o Brasil</div>
+      <div>✅ Produção sob medida</div>
       <div>🎨 Layout para aprovação</div>
+      <div>🚚 Envio para todo Brasil</div>
       <div>⭐ Alta qualidade</div>
     </div>
 
     <div class="clients">
-      <h3>Alguns clientes que confiam na A&F Uniformes</h3>
+      <h3>Empresas e eventos que confiaram na A&F Uniformes</h3>
+
       <div class="client-grid">
-        <div class="client"><div class="client-img">Foto</div><span>@cliente1</span></div>
-        <div class="client"><div class="client-img">Foto</div><span>@cliente2</span></div>
-        <div class="client"><div class="client-img">Foto</div><span>@cliente3</span></div>
-        <div class="client"><div class="client-img">Foto</div><span>@cliente4</span></div>
+
+        <div class="client">
+          <div class="client-img">Foto</div>
+          <strong>Primeiro Reino Burger</strong><br>
+          <span>@primeiroreinoburger</span>
+          <p class="small">355 mil seguidores</p>
+        </div>
+
+        <div class="client">
+          <div class="client-img">Foto</div>
+          <strong>Construvidros</strong><br>
+          <span>@construvidrosrs</span>
+          <p class="small">11,9 mil seguidores</p>
+        </div>
+
+        <div class="client">
+          <div class="client-img">Foto</div>
+          <strong>No Stress</strong><br>
+          <span>@nostress</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <div class="client-img">Foto</div>
+          <strong>Vigília Ressuscita</strong><br>
+          <span>@vigiliaressuscita</span>
+          <p class="small">Evento parceiro</p>
+        </div>
+
       </div>
     </div>
 
-    <button class="btn primary" onclick="avancar()">Começar minha simulação</button>
+    <div class="box green">
+      Sua empresa pode ser a próxima a fazer parte dessa história.
+    </div>
+
+    <button class="btn primary" onclick="avancar()">
+      🚀 Começar minha simulação
+    </button>
   `;
 }
 
