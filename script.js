@@ -1,3 +1,199 @@
+// A&F Smart Uniformes v2.0
+
+const state = {
+  step: 0,
+  cart: [],
+  currentItem: {},
+  leadSaved: false,
+  data: {}
+};
+
+const screen = document.getElementById("screen");
+const backBtn = document.getElementById("backBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+const steps = [
+  "home",
+  "perfil",
+  "produto",
+  "quantidade",
+  "personalizacao",
+  "carrinho",
+  "prazo",
+  "decisor",
+  "condicao",
+  "promocao",
+  "dados",
+  "entrega",
+  "loading",
+  "resultado"
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  backBtn.addEventListener("click", voltar);
+  nextBtn.addEventListener("click", avancar);
+  render();
+});
+
+function render() {
+  const current = steps[state.step];
+
+  updateProgress();
+renderMiniCart();
+  backBtn.classList.toggle("hidden", state.step === 0 || current === "loading" || current === "resultado");
+  nextBtn.classList.toggle("hidden", ["home","perfil","produto","quantidade","personalizacao","carrinho","prazo","decisor","condicao","promocao","loading","resultado"].includes(current));
+
+  if (current === "home") renderHome();
+  if (current === "perfil") renderPerfil();
+  if (current === "produto") renderProduto();
+  if (current === "quantidade") renderQuantidade();
+  if (current === "personalizacao") renderPersonalizacao();
+  if (current === "carrinho") renderCarrinho();
+  if (current === "prazo") renderPrazo();
+  if (current === "decisor") renderDecisor();
+  if (current === "condicao") renderCondicao();
+  if (current === "promocao") renderPromocao();
+  if (current === "dados") renderDados();
+  if (current === "entrega") renderEntrega();
+  if (current === "loading") renderLoading();
+  if (current === "resultado") renderResultado();
+}
+
+function updateProgress() {
+  document.getElementById("stepCounter").innerText = `Etapa ${state.step + 1} de ${steps.length}`;
+  document.getElementById("progressBar").style.width = `${((state.step + 1) / steps.length) * 100}%`;
+}
+
+function avancar() {
+  salvarInputs();
+  if (state.step < steps.length - 1) {
+    state.step++;
+    render();
+  }
+}
+
+function voltar() {
+  if (state.step > 0) {
+    state.step--;
+    render();
+  }
+}
+
+function renderHome() {
+  screen.innerHTML = `
+    <span class="badge">Orçamento rápido A&F</span>
+
+    <h1>👕 Faça seu orçamento em menos de 1 minuto</h1>
+
+    <p>
+      Escolha os produtos, informe a quantidade e receba uma estimativa rápida e organizada.
+      Sem esperar atendimento, sem enrolação e sem compromisso.
+    </p>
+
+    <div class="box green">
+      👇 Para começar, clique no botão abaixo.
+    </div>
+
+    <button class="btn primary" onclick="avancar()">
+      📋 FAZER MEU ORÇAMENTO AGORA
+    </button>
+
+    <p class="small">
+      Leva menos de 1 minuto. Depois, se quiser avançar, nossa equipe te atende pelo WhatsApp.
+    </p>
+
+    <div class="box gold">
+      ⭐⭐⭐⭐⭐<br>
+      <strong>Uniformes personalizados para empresas, igrejas, eventos e equipes.</strong><br>
+      Produção sob medida, layout para aprovação e atendimento para todo o Brasil.
+    </div>
+
+    <div class="clients">
+      <h3>Alguns clientes que confiam na A&F Uniformes</h3>
+
+      <div class="client-grid">
+
+        <div class="client">
+          <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
+          <strong>Primeiro Reino Burger</strong><br>
+          <span>@primeiroreinoburger</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <img class="client-img" src="no-stress.jpg" alt="No Stress">
+          <strong>No Stress</strong><br>
+          <span>@nostress</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
+          <strong>Allufort Esquadrias</strong><br>
+          <span>@allufortesquadrias</span>
+          <p class="small">Cliente A&F Uniformes</p>
+        </div>
+
+        <div class="client">
+          <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigilhão Ressuscita">
+          <strong>Vigilhão Ressuscita</strong><br>
+          <span>@vigiliaressuscita</span>
+          <p class="small">Evento parceiro</p>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+function renderPerfil() {
+  screen.innerHTML = `
+    <h1>Para quem será esse uniforme?</h1>
+    <p>Assim conseguimos montar uma estimativa mais adequada para sua necessidade.</p>
+    <div class="grid">
+      ${btn("perfil","Empresa / Equipe")}
+      ${btn("perfil","Igreja / Ministério")}
+      ${btn("perfil","Evento / Congresso")}
+      ${btn("perfil","Prestação de serviço")}
+      ${btn("perfil","Escola / Projeto")}
+    </div>
+  `;
+}
+
+function renderProduto() {
+  screen.innerHTML = `
+    <h1>Qual item deseja adicionar ao orçamento?</h1>
+    <p>Você pode adicionar vários produtos no mesmo pedido.</p>
+    <div class="grid">
+      ${btnProduto("Camiseta")}
+      ${btnProduto("Polo")}
+      ${btnProduto("Moletom")}
+      ${btnProduto("Boné")}
+      ${btnProduto("Calça de sarja")}
+    </div>
+  `;
+}
+
+function renderQuantidade() {
+  const qtds = [3,5,8,10,12,15,18,20,23,25,28,30,40,50,80,100];
+  screen.innerHTML = `
+    <h1>Quantidade deste item</h1>
+    <p>Quanto maior a quantidade, melhor tende a ficar o valor por peça.</p>
+    <div class="grid two">
+      ${qtds.map(q => `<button class="option" onclick="selecionarQuantidade(${q})">${q === 100 ? "100 ou mais" : q + " unidades"}</button>`).join("")}
+    </div>
+  `;
+}
+
+function renderPersonalizacao() {
+  let opcoes = [];
+
+  if (state.currentItem.produto === "Boné") {
+    opcoes = ["Sem personalização", "Logo na frente"];
+  } else if (state.currentItem.produto === "Calça de sarja") {
+    opcoes = ["Sem personalização", "Logo na perna"];
+  } else {
+    opcoes = ["Logo na frente", "Frente e costas", "Frente, costas e manga", "Frente e barra"];
   }
 
   screen.innerHTML = `
@@ -203,13 +399,8 @@ Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.
 }
 
 function btn(campo, valor) {
-  return `<button class="option" onclick="selecionarOpcao('${campo}', '${valor}')">${valor}</button>`;
-}
+  return `<button class="option" onclick="escolher('${campo}','${valor}'); avancar();">${valor}</button>`;
 
-function selecionarOpcao(campo, valor) {
-  state.data[campo] = valor;
-  avancar();
-}
 function btnProduto(produto) {
   return `<button class="option" onclick="selecionarProduto('${produto}')">${produto}</button>`;
 }
