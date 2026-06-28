@@ -67,14 +67,17 @@ function updateProgress() {
 function avancar() {
   salvarInputs();
 
-  registrarEvento("Etapa concluída", steps[state.step]);
+  try {
+    registrarEvento("Etapa concluída", steps[state.step]);
+  } catch (erro) {
+    console.log("Erro ao registrar evento:", erro);
+  }
 
   if (state.step < steps.length - 1) {
     state.step++;
     render();
   }
 }
-
 function voltar() {
   if (state.step > 0) {
     state.step--;
