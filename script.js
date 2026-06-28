@@ -328,7 +328,9 @@ function renderLoading() {
 
 function renderResultado() {
   calcularTotal();
-
+if (typeof fbq !== 'undefined') {
+    fbq('track', 'CompleteRegistration');
+}
   screen.innerHTML = `
     <span class="badge">Simulação concluída</span>
     <h1>Sua estimativa ficou pronta!</h1>
