@@ -685,18 +685,26 @@ function registrarEvento(evento, detalhe = "") {
       },
       body: JSON.stringify({
         tipo: "evento",
-        dataHora: new Date().toISOString(),
-        evento: evento,
+        sessao: localStorage.getItem("sessaoAef") || criarSessaoAef(),
         etapa: detalhe,
+        evento: evento,
+        valor: "",
+        produto: state.currentItem.produto || state.data.produto || "",
+        quantidade: state.currentItem.quantidade || state.data.quantidade || "",
+        total: state.data.total || "",
         nome: state.data.nome || "",
-        telefone: state.data.telefone || "",
-        perfil: state.data.perfil || "",
-        produto: state.currentItem.produto || ""
+        telefone: state.data.telefone || ""
       })
     });
-  } catch (e) {
-    console.log(e);
+  } catch (erro) {
+    console.log("Erro ao registrar evento:", erro);
   }
+}
+
+function criarSessaoAef() {
+  const id = "AEF-" + Date.now() + "-" + Math.floor(Math.random() * 9999);
+  localStorage.setItem("sessaoAef", id);
+  return id;
 }
   calcularTotal();
 
