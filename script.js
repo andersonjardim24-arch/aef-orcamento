@@ -329,7 +329,10 @@ function renderLoading() {
 function renderResultado() {
   calcularTotal();
 if (typeof fbq !== 'undefined') {
-    fbq('track', 'CompleteRegistration');
+    fbq('track', 'CompleteRegistration', {
+        value: state.data.total,
+        currency: 'BRL'
+    });
 }
   screen.innerHTML = `
     <span class="badge">Simulação concluída</span>
