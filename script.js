@@ -122,13 +122,12 @@ function renderHome() {
         </div>
 
         <div class="client">
-          <img class="client-img" src="alufort-esquadrias.jpg" alt="Alufort Esquadrias">
+          <img class="client-img" src="allufort-esquadrias.jpg" alt="Alufort Esquadrias">
           <strong>Allufort Esquadrias</strong><br>
           <span>@allufortesquadrias</span>
           <p class="small">52 mil seguidores</p>
         </div>
-
-        <div class="client">
+        
           <div class="client">
     <img class="client-img" src="no-stress.jpg" alt="No Stress">
           <strong>No Stress</strong><br>
@@ -137,7 +136,7 @@ function renderHome() {
         </div>
 
         <div class="client">
-          <div class="client-img">Foto</div>
+         <img class="client-img" src="Vigilhao-ressuscita.jpg" alt="Vigília Ressuscita">
           <strong>Vigília Ressuscita</strong><br>
           <span>@vigiliaressuscita</span>
           <p class="small">Evento parceiro</p>
