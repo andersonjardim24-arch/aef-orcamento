@@ -348,3 +348,14 @@ input{
     flex-direction:column;
   }
 }
+.clients{
+  margin-bottom: 34px;
+}
+
+.box.green{
+  margin-bottom: 26px;
+}
+
+button.btn.primary{
+  margin-top: 18px;
+}
