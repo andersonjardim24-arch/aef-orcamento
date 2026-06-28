@@ -151,11 +151,11 @@ function renderPerfil() {
     <h1>Para quem será esse uniforme?</h1>
     <p>Assim conseguimos montar uma estimativa mais adequada para sua necessidade.</p>
     <div class="grid">
-      ${btn("objetivo","Empresa / Equipe")}
-      ${btn("objetivo","Igreja / Ministério")}
-      ${btn("objetivo","Evento / Congresso")}
-      ${btn("objetivo","Prestação de serviço")}
-      ${btn("objetivo","Escola / Projeto")}
+      ${btn("perfil","Empresa / Equipe")}
+      ${btn("perfil","Igreja / Ministério")}
+      ${btn("perfil","Evento / Congresso")}
+      ${btn("perfil","Prestação de serviço")}
+      ${btn("perfil","Escola / Projeto")}
     </div>
   `;
 }
