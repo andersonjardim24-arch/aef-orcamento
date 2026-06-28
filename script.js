@@ -136,7 +136,7 @@ function renderHome() {
         </div>
 
         <div class="client">
-         <img class="client-img" src="Vigilhao-ressuscita.jpg" alt="Vigília Ressuscita">
+         <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigília Ressuscita">
           <strong>Vigília Ressuscita</strong><br>
           <span>@vigiliaressuscita</span>
           <p class="small">Evento parceiro</p>
