@@ -399,8 +399,7 @@ Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.
 }
 
 function btn(campo, valor) {
-  return `<button class="option" onclick="escolher('${campo}','${valor}')">${valor}</button>`;
-}
+  return `<button class="option" onclick="escolher('${campo}','${valor}'); avancar();">${valor}</button>`;
 
 function btnProduto(produto) {
   return `<button class="option" onclick="selecionarProduto('${produto}')">${produto}</button>`;
