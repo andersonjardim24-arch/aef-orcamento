@@ -330,7 +330,7 @@ function renderResultado() {
   calcularTotal();
 if (typeof fbq !== 'undefined') {
     fbq('track', 'CompleteRegistration', {
-        value: state.data.total,
+       value: Number(state.data.total || 0),
         currency: 'BRL'
     });
 }
