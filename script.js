@@ -370,9 +370,30 @@ function renderResultado() {
 </button>
 
 <br><br>
+<div class="box">
 
+  <h3 style="margin-bottom:12px;">
+    👕 Veja como outras empresas, igrejas e equipes personalizaram seus uniformes.
+  </h3>
+
+  <p style="margin-bottom:18px;">
+    Inspire-se em projetos reais produzidos pela A&F Uniformes antes de avançar.
+  </p>
+
+  <button class="btn secondary"
+    onclick="window.open('https://instagram.com/aefuniformes','_blank')">
+    📸 Ver projetos reais
+  </button>
+
+  <p class="small">
+    Abre em nova aba para você não perder sua simulação.
+  </p>
+
+</div>
+
+<br>
 <button class="btn whatsapp" onclick="abrirWhatsApp()">
-Quero avançar com meu pedido
+🚀 Quero receber meu layout personalizado
 </button>
 
 <p class="small">
