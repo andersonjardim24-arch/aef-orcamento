@@ -103,7 +103,7 @@ function renderHome() {
     </div>
 
     <div class="authority">
-      <div>✅ Produção sob medida</div>
+      <div>✅ Produção ágil</div>
       <div>🎨 Layout para aprovação</div>
       <div>🚚 Envio para todo Brasil</div>
       <div>⭐ Alta qualidade</div>
