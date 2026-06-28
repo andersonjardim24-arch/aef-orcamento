@@ -110,7 +110,7 @@ function renderHome() {
     </div>
 
     <div class="clients">
-      <h3>Empresas e eventos que confiaram na A&F Uniformes</h3>
+      <h3>Empresas e eventos que confiam na A&F Uniformes</h3>
 
       <div class="client-grid">
 
