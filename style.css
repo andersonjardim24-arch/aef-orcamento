@@ -357,3 +357,27 @@ input{
 button.btn.primary{
   margin-top: 18px;
 }
+#screen{
+  animation: fadeSlide .28s ease;
+}
+
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform:translateY(12px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.option:active,
+.btn:active{
+  transform:scale(.97);
+}
+
+.option,
+.btn{
+  transition:.2s ease;
+}
