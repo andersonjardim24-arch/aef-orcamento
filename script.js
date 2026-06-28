@@ -32,6 +32,9 @@ const steps = [
 document.addEventListener("DOMContentLoaded", () => {
   backBtn.addEventListener("click", voltar);
   nextBtn.addEventListener("click", avancar);
+
+  registrarEvento("Pagina carregada", "entrada");
+
   render();
 });
 
