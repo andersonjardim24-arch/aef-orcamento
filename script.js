@@ -67,20 +67,9 @@ function updateProgress() {
 function avancar() {
   salvarInputs();
 
-  try {
-    registrarEvento("Etapa concluída", steps[state.step]);
-  } catch (erro) {
-    console.log("Erro ao registrar evento:", erro);
-  }
-
   if (state.step < steps.length - 1) {
+    registrarEventoSeguro("Etapa concluída", steps[state.step]);
     state.step++;
-    render();
-  }
-}
-function voltar() {
-  if (state.step > 0) {
-    state.step--;
     render();
   }
 }
@@ -677,25 +666,27 @@ function renderMiniCart() {
     return;
   }
 function registrarEvento(evento, detalhe = "") {
-
-  fetch(CONFIG.scriptURL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      tipo: "evento",
-      dataHora: new Date().toISOString(),
-      evento: evento,
-      etapa: detalhe,
-      nome: state.data.nome || "",
-      telefone: state.data.telefone || "",
-      perfil: state.data.perfil || "",
-      produto: state.currentItem.produto || ""
-    })
-  });
-
+  try {
+    fetch(CONFIG.scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        tipo: "evento",
+        dataHora: new Date().toISOString(),
+        evento: evento,
+        etapa: detalhe,
+        nome: state.data.nome || "",
+        telefone: state.data.telefone || "",
+        perfil: state.data.perfil || "",
+        produto: state.currentItem.produto || ""
+      })
+    });
+  } catch (e) {
+    console.log(e);
+  }
 }
   calcularTotal();
 
