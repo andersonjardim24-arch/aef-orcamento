@@ -121,13 +121,13 @@ function renderHome() {
           <span>@primeiroreinoburger</span>
           <p class="small">Cliente A&F Uniformes</p>
         </div>
-
-        <div class="client">
-          <img class="client-img" src="constru-vidros.jpg" alt="Construvidros">
-          <strong>Construvidros</strong><br>
-          <span>@construvidrosrs</span>
-          <p class="small">Cliente A&F Uniformes</p>
-        </div>
+        
+<div class="client">
+    <img class="client-img" src="no-stress.jpg" alt="No Stress">
+    <strong>No Stress</strong><br>
+    <span>@nostress</span>
+    <p class="small">Cliente A&F Uniformes</p>
+</div>
 
         <div class="client">
           <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
