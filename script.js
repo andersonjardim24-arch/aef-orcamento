@@ -296,9 +296,14 @@ function renderResultado() {
       <div>Média aproximada: R$ ${moeda(state.data.unitario)} por peça</div>
     </div>
 
-    <div class="box green">${freteMensagem()}</div>
-    <div class="box gold">${condicaoMensagem()}</div>
+   <div class="box green">
+  ${freteMensagem()}
+  ${barraFreteGratis()}
+</div>
 
+<div class="box gold">
+  ${condicaoMensagem()}
+</div>
     <div class="box">
       ✅ Tecido de alta qualidade<br>
       ✅ Personalização em alta definição<br>
@@ -316,8 +321,19 @@ function renderResultado() {
       Promoções: ${state.data.promocao}
     </div>
 
-    <button class="btn whatsapp" onclick="abrirWhatsApp()">Quero avançar com meu pedido</button>
-    <p class="small">Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.</p>
+    <button class="btn secondary" onclick="adicionarMaisNoResultado()">
+➕ Adicionar mais itens ao orçamento
+</button>
+
+<br><br>
+
+<button class="btn whatsapp" onclick="abrirWhatsApp()">
+Quero avançar com meu pedido
+</button>
+
+<p class="small">
+Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.
+</p>
   `;
 }
 
@@ -524,7 +540,46 @@ function condicaoMensagem() {
 
   return "🎁 Aumentando a quantidade, você pode liberar condições especiais.";
 }
-
+function adicionarMaisNoResultado() {
+    state.leadSaved = false;
+    state.step = 2; // volta para a tela de escolha de produtos
+    render();
+}
 function moeda(valor) {
   return Number(valor || 0).toFixed(2).replace(".", ",");
+}
+function barraFreteGratis() {
+  const qtd = state.data.qtdNumero || 0;
+  const meta = CONFIG.freteGratis;
+  const percentual = Math.min((qtd / meta) * 100, 100);
+
+  if (qtd >= meta) {
+    return `
+      <div style="margin-top:12px;">
+        <div style="background:#d1fae5;border-radius:999px;overflow:hidden;height:12px;">
+          <div style="width:100%;height:100%;background:#1f7a3f;"></div>
+        </div>
+        <p style="margin-top:8px;color:#14532d;font-weight:800;">
+          ${qtd}/${meta} peças — condição especial desbloqueada.
+        </p>
+      </div>
+    `;
+  }
+
+  return `
+    <div style="margin-top:12px;">
+      <div style="background:#d1fae5;border-radius:999px;overflow:hidden;height:12px;">
+        <div style="width:${percentual}%;height:100%;background:#1f7a3f;"></div>
+      </div>
+      <p style="margin-top:8px;color:#14532d;font-weight:800;">
+        ${qtd}/${meta} peças — faltam apenas ${meta - qtd} peças.
+      </p>
+    </div>
+  `;
+}
+
+function adicionarMaisNoResultado() {
+  state.leadSaved = false;
+  state.step = 2;
+  render();
 }
