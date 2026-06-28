@@ -66,6 +66,9 @@ function updateProgress() {
 
 function avancar() {
   salvarInputs();
+
+  registrarEvento("Etapa concluída", steps[state.step]);
+
   if (state.step < steps.length - 1) {
     state.step++;
     render();
@@ -670,7 +673,27 @@ function renderMiniCart() {
     miniCart.style.display = "none";
     return;
   }
+function registrarEvento(evento, detalhe = "") {
 
+  fetch(CONFIG.scriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      tipo: "evento",
+      dataHora: new Date().toISOString(),
+      evento: evento,
+      etapa: detalhe,
+      nome: state.data.nome || "",
+      telefone: state.data.telefone || "",
+      perfil: state.data.perfil || "",
+      produto: state.currentItem.produto || ""
+    })
+  });
+
+}
   calcularTotal();
 
   miniCart.style.display = "block";
