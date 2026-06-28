@@ -94,7 +94,7 @@ function renderHome() {
     <h1>👕 Faça seu orçamento em menos de 1 minuto</h1>
 
     <p>
-      Escolha os produtos, informe a quantidade e receba uma estimativa rápida e organizada.
+      Escolha os produtos, informe a quantidade e receba uma orçamento rápido e organizado.
       Sem esperar atendimento, sem enrolação e sem compromisso.
     </p>
 
