@@ -68,7 +68,7 @@ function avancar() {
   salvarInputs();
 
   if (state.step < steps.length - 1) {
-    registrarEventoSeguro("Etapa concluída", steps[state.step]);
+   registrarEvento("Etapa concluída", steps[state.step]);
     state.step++;
     render();
   }
