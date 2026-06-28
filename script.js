@@ -399,7 +399,13 @@ Ao avançar, nossa equipe poderá auxiliar com layout, ajustes e fechamento.
 }
 
 function btn(campo, valor) {
-  return `<button class="option" onclick="escolher('${campo}','${valor}')">${valor}</button>`;
+  return `<button class="option" onclick="selecionarOpcao('${campo}', '${valor}')">${valor}</button>`;
+}
+
+function selecionarOpcao(campo, valor) {
+  state.data[campo] = valor;
+  state.step++;
+  render();
 }
 
 function btnProduto(produto) {
