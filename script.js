@@ -675,14 +675,38 @@ function renderMiniCart() {
     miniCart.style.display = "none";
     return;
   }
+function renderMiniCart() {
+  let miniCart = document.getElementById("miniCart");
+
+  if (!miniCart) {
+    miniCart = document.createElement("div");
+    miniCart.id = "miniCart";
+    screen.before(miniCart);
+  }
+
+  if (!state.cart.length || state.step === 0 || state.step >= 12) {
+    miniCart.innerHTML = "";
+    miniCart.style.display = "none";
+    return;
+  }
+
+  calcularTotal();
+
+  miniCart.style.display = "block";
+  miniCart.innerHTML = `
+    <div class="mini-cart">
+      🛒 ${state.cart.length} item(ns) no orçamento
+      <strong>R$ ${moeda(state.data.total)}</strong>
+    </div>
+  `;
+}
+
 function registrarEvento(evento, detalhe = "") {
   try {
     fetch(CONFIG.scriptURL, {
       method: "POST",
       mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         tipo: "evento",
         sessao: localStorage.getItem("sessaoAef") || criarSessaoAef(),
@@ -706,13 +730,4 @@ function criarSessaoAef() {
   localStorage.setItem("sessaoAef", id);
   return id;
 }
-  calcularTotal();
-
-  miniCart.style.display = "block";
-  miniCart.innerHTML = `
-    <div class="mini-cart">
-      🛒 ${state.cart.length} item(ns) no orçamento
-      <strong>R$ ${moeda(state.data.total)}</strong>
-    </div>
-  `;
-}
+ 
