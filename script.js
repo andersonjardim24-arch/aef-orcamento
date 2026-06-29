@@ -716,11 +716,9 @@ function criarSessaoAef() {
   return id;
 }
 function iniciarOrcamento() {
-  try {
-    registrarEvento("Etapa concluída", "home");
-  } catch (erro) {
-    console.log("Erro ao registrar início:", erro);
-  }
+  alert("Clique detectado");
+
+  registrarEvento("Etapa concluída", "home");
 
   document.body.classList.add("form-started");
 
