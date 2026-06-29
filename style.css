@@ -563,21 +563,34 @@ input:focus {
   font-weight:900;
 }
 #heroButton{
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 18px;
-    width: calc(100% - 40px);
-    max-width: 340px;
-    padding: 18px 20px;
-    border-radius: 18px;
-    z-index: 9999;
+  position:fixed !important;
+  left:16px !important;
+  right:16px !important;
+  bottom:18px !important;
+  width:auto !important;
+  max-width:none !important;
+  z-index:9999 !important;
 
-    background: linear-gradient(90deg,#1ea63b,#79ff00);
-    color:#fff;
-    font-weight:900;
-    font-size:20px;
+  padding:16px 18px !important;
+  border-radius:22px !important;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    animation:pulse 1.2s infinite;
+  background:linear-gradient(135deg,#15963b,#7cff00) !important;
+  color:#fff !important;
+
+  font-size:18px !important;
+  font-weight:900 !important;
+  line-height:1.1 !important;
+  text-align:center !important;
+
+  box-shadow:0 12px 35px rgba(124,255,0,.45) !important;
+  animation:heroPulse 1.4s infinite !important;
+}
+
+@keyframes heroPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.03);
+  }
 }
