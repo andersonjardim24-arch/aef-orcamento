@@ -96,7 +96,7 @@ function renderHome() {
       👇 Para começar, clique no botão abaixo.
     </div>
 
-  <button id="heroButton" class="btn primary" onclick="iniciarOrcamento()">
+ <button id="heroButton" class="btn primary" onclick="iniciarOrcamento()">
     📋 FAZER MEU ORÇAMENTO AGORA
 </button>
     <p>
