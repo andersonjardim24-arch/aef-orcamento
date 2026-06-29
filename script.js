@@ -716,16 +716,12 @@ function criarSessaoAef() {
   return id;
 }
 function iniciarOrcamento() {
-    const hero = document.getElementById("heroArea");
+  document.body.classList.add("form-started");
 
-    if (hero) {
-        hero.style.display = "none";
-    }
+  avancar();
 
-    avancar();
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
