@@ -96,10 +96,9 @@ function renderHome() {
       👇 Para começar, clique no botão abaixo.
     </div>
 
-   <button class="btn primary cta-principal" onclick="avancar()">
-      📋 FAZER MEU ORÇAMENTO AGORA
-    </button>
-
+   <button id="heroButton" class="btn primary" onclick="avancar()">
+    📋 FAZER MEU ORÇAMENTO AGORA
+</button>
     <p>
       Escolha os produtos, informe a quantidade e receba uma orçamento rápido e organizado.
       Sem esperar atendimento, sem enrolação e sem compromisso.
