@@ -546,3 +546,9 @@ input:focus {
         box-shadow:0 0 35px rgba(124,255,0,.7);
     }
 }
+.hero-area .hero-cta{
+  position: sticky !important;
+  bottom: 14px !important;
+  z-index: 50 !important;
+  margin-top: 18px !important;
+}
