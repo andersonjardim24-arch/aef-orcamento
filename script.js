@@ -716,13 +716,13 @@ function criarSessaoAef() {
   return id;
 }
 function iniciarOrcamento() {
-  document.body.classList.add("form-started");
-
   try {
-    registrarEvento("Pagina carregada", "entrada");
+    registrarEvento("Etapa concluída", "home");
   } catch (erro) {
-    console.log("Erro evento entrada:", erro);
+    console.log("Erro ao registrar início:", erro);
   }
+
+  document.body.classList.add("form-started");
 
   avancar();
 
