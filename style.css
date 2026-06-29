@@ -552,3 +552,13 @@ input:focus {
   z-index: 50 !important;
   margin-top: 18px !important;
 }
+.hero-cta::before{
+  content:"Toque para começar";
+  position:absolute;
+  top:-26px;
+  left:0;
+  right:0;
+  color:#1f8f3f;
+  font-size:13px;
+  font-weight:900;
+}
