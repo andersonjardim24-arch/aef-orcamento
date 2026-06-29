@@ -716,8 +716,7 @@ function criarSessaoAef() {
   return id;
 }
 function iniciarOrcamento() {
-  alert("Clique detectado");
-
+ 
   try {
     registrarEvento("Etapa concluída", "home");
   } catch (erro) {
