@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '1270274591563979');
-fbq('track', 'PageView');
-</script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1270274591563979&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A&F Smart Uniformes</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <main class="app">
-    <section class="card">
-      <header class="top">
-        <div>
-          <h2>A&F Smart Uniformes</h2>
-          <p>Receba seu orçamento em menos de 1 minuto</p>
-        </div>
-        <span id="stepCounter">Etapa 1</span>
-      </header>
-
-      <div class="progress">
-        <div id="progressBar"></div>
-      </div>
-
-      <section id="screen"></section>
-
-      <footer class="nav">
-        <button id="backBtn" class="btn secondary">Voltar</button>
-        <button id="nextBtn" class="btn primary">Avançar</button>
-      </footer>
-    </section>
-  </main>
 
   <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page-bg">
+
+    <main class="phone-card">
+
+      <header class="top-header">
+        <div class="brand">
+          <strong>A&F</strong>
+          <span>UNIFORMES</span>
+        </div>
+
+        <div class="security-badge">
+          +10 anos<br>
+          vestindo equipes
+        </div>
+      </header>
+
+      <section class="hero-area">
+        <div>
+          <p class="mini-title">Pré-orçamento automático</p>
+
+          <h1 class="main-title">
+            Obtenha seu<br>
+            <span>pré-orçamento</span><br>
+            em poucos cliques
+          </h1>
+
+          <p class="subtitle">
+            Rápido, prático e sem compromisso.
+          </p>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <div class="benefit">
+          <span>✓</span>
+          <p>Sem compromisso</p>
+        </div>
+
+        <div class="benefit">
+          <span>✓</span>
+          <p>Resultado em menos de 1 minuto</p>
+        </div>
+
+        <div class="benefit">
+          <span>✓</span>
+          <p>Veja condições promocionais</p>
+        </div>
+      </section>
+
+      <section class="progress-area">
+        <div id="stepCounter" class="step-pill">Etapa 1 de 14</div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section id="screen" class="content-area"></section>
+
+      <footer class="nav-buttons">
+        <button id="backBtn" class="btn secondary hidden">Voltar</button>
+        <button id="nextBtn" class="btn primary">Avançar</button>
+      </footer>
+
+      <div class="safe-text">
+        🔒 Seus dados estão seguros. Não compartilhamos suas informações.
+      </div>
+
+    </main>
+
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
