@@ -718,6 +718,12 @@ function criarSessaoAef() {
 function iniciarOrcamento() {
   document.body.classList.add("form-started");
 
+  try {
+    registrarEvento("Pagina carregada", "entrada");
+  } catch (erro) {
+    console.log("Erro evento entrada:", erro);
+  }
+
   avancar();
 
   window.scrollTo({
