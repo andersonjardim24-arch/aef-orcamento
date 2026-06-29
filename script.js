@@ -715,3 +715,17 @@ function criarSessaoAef() {
   localStorage.setItem("sessaoAef", id);
   return id;
 }
+function iniciarOrcamento() {
+    const hero = document.getElementById("heroArea");
+
+    if (hero) {
+        hero.style.display = "none";
+    }
+
+    avancar();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
