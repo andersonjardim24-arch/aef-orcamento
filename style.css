@@ -319,3 +319,27 @@ input:focus {
     font-size: 29px;
   }
 }
+.logos-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:20px;
+}
+
+.logo-card{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.logo-card img{
+    width:100%;
+    max-width:140px;
+    max-height:60px;
+    object-fit:contain;
+}
