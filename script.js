@@ -125,28 +125,24 @@ function renderHome() {
           <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
           <strong>Primeiro Reino Burger</strong><br>
           <span>@primeiroreinoburger</span>
-          <p class="small">Cliente A&F Uniformes</p>
         </div>
 
         <div class="client">
           <img class="client-img" src="no-stress.jpg" alt="No Stress">
           <strong>No Stress</strong><br>
           <span>@nostress</span>
-          <p class="small">Cliente A&F Uniformes</p>
         </div>
 
         <div class="client">
           <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
           <strong>Allufort Esquadrias</strong><br>
           <span>@allufortesquadrias</span>
-          <p class="small">Cliente A&F Uniformes</p>
         </div>
 
         <div class="client">
           <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigilhão Ressuscita">
           <strong>Vigilhão Ressuscita</strong><br>
           <span>@vigiliaressuscita</span>
-          <p class="small">Evento parceiro</p>
         </div>
 
       </div>
