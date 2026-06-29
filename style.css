@@ -371,15 +371,19 @@ input:focus {
 
 .client,
 .logo-card {
-  width: 100% !important;
-  height: 120px !important;
-  background: #fff !important;
-  border-radius: 18px !important;
-  padding: 18px !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  width:100% !important;
+  min-height:135px !important;
+  background:#fff !important;
+  border-radius:18px !important;
+  padding:14px !important;
+  overflow:hidden !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  gap:8px !important;
 }
 
 .client img,
@@ -391,4 +395,19 @@ input:focus {
   max-height: 80px !important;
   object-fit: contain !important;
   display: block !important;
+}
+.client span{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size:13px !important;
+  color:#666 !important;
+  line-height:1.2 !important;
+  word-break:break-word !important;
+}
+
+.client-img{
+  width:70px !important;
+  height:70px !important;
+  object-fit:contain !important;
 }
