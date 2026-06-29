@@ -117,36 +117,32 @@ function renderHome() {
     </div>
 
     <div class="clients">
-      <h3>Alguns clientes que confiam na A&F Uniformes</h3>
+  <h3>Alguns clientes que confiam na A&F Uniformes</h3>
 
-      <div class="client-grid">
+  <div class="client-grid">
 
-        <div class="client">
-          <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
-          <strong>Primeiro Reino Burger</strong><br>
-          <span>@primeiroreinoburger</span>
-        </div>
-
-        <div class="client">
-          <img class="client-img" src="no-stress.jpg" alt="No Stress">
-          <strong>No Stress</strong><br>
-          <span>@nostress</span>
-        </div>
-
-        <div class="client">
-          <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
-          <strong>Allufort Esquadrias</strong><br>
-          <span>@allufortesquadrias</span>
-        </div>
-
-        <div class="client">
-          <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigilhão Ressuscita">
-          <strong>Vigilhão Ressuscita</strong><br>
-          <span>@vigiliaressuscita</span>
-        </div>
-
-      </div>
+    <div class="client">
+      <img class="client-img" src="primeiro-reino.jpg" alt="Primeiro Reino Burger">
+      <span>@primeiroreinoburger</span>
     </div>
+
+    <div class="client">
+      <img class="client-img" src="no-stress.jpg" alt="No Stress">
+      <span>@nostress</span>
+    </div>
+
+    <div class="client">
+      <img class="client-img" src="allufort-esquadrias.jpg" alt="Allufort Esquadrias">
+      <span>@allufortesquadrias</span>
+    </div>
+
+    <div class="client">
+      <img class="client-img" src="vigilhao-ressuscita.jpg" alt="Vigilhão Ressuscita">
+      <span>@vigiliaressuscita</span>
+    </div>
+
+  </div>
+</div>
   `;
 }
 
