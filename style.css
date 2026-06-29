@@ -524,3 +524,10 @@ input:focus {
     transform:rotate(45deg) translateY(7px);
   }
 }
+.mini-title{
+  background: transparent !important;
+  color: #1f8f3f !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 18px !important;
+}
