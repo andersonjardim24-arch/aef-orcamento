@@ -97,7 +97,11 @@ function renderHome() {
       Escolha os produtos, informe a quantidade e receba uma orçamento rápido e organizado.
       Sem esperar atendimento, sem enrolação e sem compromisso.
     </p>
-
+ <div class="cta-guide">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
     <div class="box green">
       👇 Para começar, clique no botão abaixo.
     </div>
