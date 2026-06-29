@@ -92,6 +92,13 @@ function renderHome() {
     <span class="badge">Orçamento rápido A&F</span>
 
     <h1>👕 Faça seu orçamento em menos de 1 minuto</h1>
+    <div class="box green">
+      👇 Para começar, clique no botão abaixo.
+    </div>
+
+    <button class="btn primary" onclick="avancar()">
+      📋 FAZER MEU ORÇAMENTO AGORA
+    </button>
 
     <p>
       Escolha os produtos, informe a quantidade e receba uma orçamento rápido e organizado.
@@ -102,13 +109,7 @@ function renderHome() {
   <span></span>
   <span></span>
 </div>
-    <div class="box green">
-      👇 Para começar, clique no botão abaixo.
-    </div>
-
-    <button class="btn primary" onclick="avancar()">
-      📋 FAZER MEU ORÇAMENTO AGORA
-    </button>
+    
 
     <p class="small">
       Leva menos de 1 minuto. Depois, se quiser avançar, nossa equipe te atende pelo WhatsApp.
