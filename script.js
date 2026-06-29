@@ -96,7 +96,7 @@ function renderHome() {
       👇 Para começar, clique no botão abaixo.
     </div>
 
-    <button class="btn primary" onclick="avancar()">
+   <button class="btn primary cta-principal" onclick="avancar()">
       📋 FAZER MEU ORÇAMENTO AGORA
     </button>
 
