@@ -594,3 +594,11 @@ input:focus {
     transform:scale(1.03);
   }
 }
+body.form-started #landingArea{
+  display:none !important;
+}
+
+body.form-started .top-header,
+body.form-started .benefits{
+  display:none !important;
+}
